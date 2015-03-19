@@ -1,4 +1,5 @@
-# qssllabs
+# qssllabs-scan
+
 Qualys SSL Labs API Wrapper for NodeJS
 
 This tool is a command-line client for the SSL Labs APIs, designed for automated and/or bulk testing.
