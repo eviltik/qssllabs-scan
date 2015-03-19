@@ -1,0 +1,28 @@
+{
+  "name": "ssllabs",
+  "version": "1.0.0",
+  "description": "Qualys SSL Labs API Wrapper for NodeJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eviltik/ssllabs"
+  },
+  "keywords": [
+    "security",
+    "ssl",
+    "api"
+  ],
+  "author": "eviltik <michel.soisson@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eviltik/ssllabs/issues"
+  },
+  "homepage": "https://github.com/eviltik/ssllabs",
+  "dependencies": {
+    "async": "^0.9.0",
+    "optimist": "^0.6.1"
+  }
+}
