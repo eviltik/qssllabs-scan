@@ -8,6 +8,7 @@ Before you use this tool please review the terms and conditions, which can be fo
 * https://www.ssllabs.com/about/terms.html
 * https://www.ssllabs.com/downloads/Qualys_SSL_Labs_Terms_of_Use.pdf
 
+------
 Usage
 
 SYNOPSIS
@@ -16,7 +17,11 @@ SYNOPSIS
     qssllabs-scan [options] --hostfile file
 
 
+-----
 API Documentation:
 https://github.com/ssllabs/ssllabs-scan/blob/master/ssllabs-api-docs.md
 
-
+-----
+Other languages implementations:
+* Ruby gem: https://github.com/Shopify/ssllabs.rb
+* Go: https://github.com/ssllabs/ssllabs-scan/
