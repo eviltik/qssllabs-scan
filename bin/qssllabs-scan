@@ -1,0 +1,69 @@
+#!/usr/bin/env node
+var sslscan = require('../main');
+var options = require('../libs/options');
+var output = require('../libs/formater');
+var printf = require('printf');
+var spinner = require('cli-spinner').Spinner;
+
+options.parse(process.argv,function(err,options) {
+    if (err) {
+        console.log('Error: ',err);
+        process.exit(0);
+    }
+
+    var scan = new sslscan(options);
+    var endpointId;
+    var indicatorTimer;
+    var indicatorPos = '-';
+
+    //console.log(scan.getInfo());
+
+    scan.on('end',function(data) {
+        console.log(data);
+        //console.log(JSON.stringify(data,null,2));
+        process.exit(0);
+    });
+
+    scan.on('endpoints',function(endpoints) {
+        console.log(endpoints.length+" endpoints detected: "+endpoints.join(', '));
+    });
+
+    scan.on('sleep',function(msg) {
+        console.log(msg);
+    });
+
+    scan.on('error',function(err) {
+        printf(process.stdout,"\r\n%s",err);
+        process.exit(0);
+    });
+
+    scan.on('progress',function(data) {
+        if (!endpointId) endpointId = data.endpointId;
+        if (data.endpointId == endpointId) {
+            printf(process.stdout,"\r%-60s",data.message);
+        } else {
+            console.log(data.message);
+        }
+        if (!indicatorTimer) {
+            /*
+            indicatorTimer = new spinner('processing.. %s');
+            indicatorTimer.setSpinnerString(8);
+            indicatorTimer.start();
+            */
+        }
+    });
+
+    /*
+    if (!options.json) {
+        scan.on('scan',function(data) {
+            process.stdout.write('\r\033[0KScanning '+data.ip+':'+data.port);
+        })
+    }
+    */
+
+    scan.run();
+});
+
+
+
+

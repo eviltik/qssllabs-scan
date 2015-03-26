@@ -18,8 +18,8 @@ SYNOPSIS
 
 
 -----
-API Documentation:
-https://github.com/ssllabs/ssllabs-scan/blob/master/ssllabs-api-docs.md
+API Documentation: https://github.com/ssllabs/ssllabs-scan/blob/master/ssllabs-api-docs.md
+SSL Labs API: https://www.ssllabs.com/projects/ssllabs-apis/index.html
 
 -----
 Other languages implementations:
